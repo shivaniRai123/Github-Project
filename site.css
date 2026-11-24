@@ -42,3 +42,20 @@ h1 { margin: 0; font-size: clamp(3rem, 10vw, 5.4rem); line-height: 1; letter-spa
 @keyframes drift { to { transform: translate(35px, 24px) scale(1.12); } }
 @media (max-width: 520px) { .site-header { align-items: flex-start; flex-direction: column; } main { margin-top: 2rem; } }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; } }
+.gallery-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 2.25rem; text-align: left; }
+.gallery-card { overflow: hidden; border: 1px solid #ffffff20; border-radius: 18px; background: #ffffff09; }
+.art { position: relative; min-height: 190px; overflow: hidden; isolation: isolate; }
+.art::before, .art::after { content: ""; position: absolute; border-radius: 50%; filter: blur(1px); }
+.art-one { background: linear-gradient(145deg, #332264, #bc73ad 55%, #f3bc94); }
+.art-one::before { width: 140px; height: 140px; right: 12%; top: 18%; background: #ffdb9c; box-shadow: 0 0 45px #ffcf91; }
+.art-one::after { width: 260px; height: 130px; left: -8%; bottom: -20%; background: #3c2b76; }
+.art-two { background: linear-gradient(155deg, #102944, #148c91 52%, #a7e4ca); }
+.art-two::before { width: 180px; height: 180px; left: 20%; top: 25%; background: #b8f4df88; border: 1px solid #ffffff66; }
+.art-two::after { width: 230px; height: 70px; right: -10%; bottom: -8%; background: #154463; transform: rotate(-18deg); }
+.art-three { background: linear-gradient(145deg, #38234f, #d66e86 58%, #ffc084); }
+.art-three::before { width: 130px; height: 130px; left: 12%; top: 23%; background: #ffd594; }
+.art-three::after { width: 95px; height: 95px; right: 13%; top: 34%; background: #9955aa; box-shadow: 0 0 35px #9955aa88; }
+.gallery-caption { padding: 1rem 1rem 1.1rem; }
+.gallery-caption h2 { margin: 0; font-size: 1rem; letter-spacing: -.02em; }
+.gallery-caption p { margin: .35rem 0 0; color: #aeb7d0; font-size: .88rem; line-height: 1.5; }
+@media (max-width: 680px) { .gallery-grid { grid-template-columns: 1fr; } .art { min-height: 220px; } }
